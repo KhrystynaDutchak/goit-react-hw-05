@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
+:root{
+  --font : "Roboto", sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #000;
+  font-family: var(--font);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+h1{
+  font : 600 48px/1.2 var(--font);
+}
+h2{
+  font : 600 32px/1.2 var(--font);
+}
+h3{
+  font : 600 20px/1.2 var(--font);
+}
+h4{
+  font : 600 18px/1.2 var(--font);
+}
+
+#root{
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+.main{
+  padding: 30px;
+}
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+
+[class*="-list"]{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: blue;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: #fff;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+.input{
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  padding: 0 15px;
+  background-color: #f9fbff;
+  max-width: 450px;
+  width: 100%;
+}
+.flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
