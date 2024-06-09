@@ -47,12 +47,11 @@ const MovieDetailsPage = () => {
           <p>Overview: {movieDetails.overview}</p>
           <p>Genres: {movieDetails.genres.map(genre => genre.name).join(', ')}</p>
         </div>
-        </div>
-        <nav className={css.linkWrp}>
-          <Link to="cast" state={{ from: location.state?.from }} className={css.detailLink}>Cast</Link>
-          <Link to="reviews" state={{ from: location.state?.from }} className={css.detailLink}>Reviews</Link>
-        </nav>
-      
+      </div>
+      <nav className={css.linkWrp}>
+        <Link to="cast" state={{ from: location.state?.from }} className={css.detailLink}>Cast</Link>
+        <Link to="reviews" state={{ from: location.state?.from }} className={css.detailLink}>Reviews</Link>
+      </nav>
       <Outlet />
     </div>
   );

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { searchMovies } from '../../movies-api';
 import MovieList from '../../components/MovieList/MovieList';
 import css from './MoviesPage.module.css';
@@ -9,23 +9,19 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const queryParam = params.get('query');
-
+    const queryParam = searchParams.get('query');
     if (queryParam) {
       setQuery(queryParam);
       fetchMovies(queryParam);
     }
-  }, [location.search]);
+  }, [searchParams]);
 
   const fetchMovies = async (searchQuery) => {
     setLoading(true);
     setError(null);
-
     try {
       const data = await searchMovies(searchQuery);
       setMovies(data.results);
@@ -38,11 +34,11 @@ const MoviesPage = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate(`?query=${query}`);
+    setSearchParams({ query });
   };
 
   return (
-    <div className='main'>
+    <div className="main">
       <form onSubmit={handleSearch}>
         <input
           type="text"
